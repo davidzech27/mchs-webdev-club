@@ -1,7 +1,14 @@
-import '../styles/globals.css'
+import "../styles/globals.css"
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+const App = ({ Component, pageProps }) => {
+    return <>
+        <Head>
+            <title>MCHS webdev club</title>
+            <link rel="icon" href="/favicon.ico" />
+        </Head>
+
+        <Component {...pageProps} />    
+    </>
 }
 
-export default MyApp
+export default App
