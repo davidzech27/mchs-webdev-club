@@ -17,13 +17,13 @@ const Home = () => {
 
                 <motion.div
                     initial={{
-                        x: "-30vw",
-                        y: "-52vw",
+                        x: "-20vw",
+                        y: "-40vw",
                         rotate: 150
                     }}
                     animate={{
-                        x: "-10vw",
-                        y: "-12vw",
+                        x: 0,
+                        y: 0,
                         rotate: 150
                     }}
                     transition={{
@@ -31,7 +31,7 @@ const Home = () => {
                         stiffness: 100,
                         damping: 12
                     }}
-                    className="h-[84vh] w-[10%] bg-gradient-to-tr from-[#dd5090] to-[#dd9050] rounded-t-full">    
+                    className="absolute left-[-2vw] top-[16vw] h-[64vh] w-[10%] bg-gradient-to-tr from-[#dd5090] to-[#dd9050] rounded-t-full">    
                 </motion.div>
 
 
@@ -49,20 +49,20 @@ const Home = () => {
                         duration: 0.8,
                         ease: "easeOut"
                     }}
-                    className="w-[65%] text-center text-6xl text-[#e4e6e8]"
+                    className="w-[65%] text-8xl text-center font-sans font-bold text-[#e4e6e8] z-10"
                 >
-                    Do you want to build and deploy impactful websites?
+                    Build and deploy impactful websites.
                 </motion.h1>
 
                 <motion.div
                     initial={{
-                        x: "28vw",
-                        y: "28vw",
+                        x: "20vw",
+                        y: "40vw",
                         rotate: -30
                     }}
                     animate={{
-                        x: "8vw",
-                        y: "-12vw",
+                        x: 0,
+                        y: 0,
                         rotate: -30
                     }}
                     transition={{
@@ -70,7 +70,7 @@ const Home = () => {
                         stiffness: 100,
                         damping: 12
                     }}
-                    className="h-[84vh] w-[10%] bg-gradient-to-tl from-[#dd5090] to-[#dd9050] rounded-t-full">    
+                    className="absolute right-[0vw] bottom-[3vw] h-[84vh] w-[10%] bg-gradient-to-tl from-[#dd5090] to-[#dd9050] rounded-t-full">
                 </motion.div>
 
 
