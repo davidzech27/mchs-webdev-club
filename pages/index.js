@@ -18,18 +18,18 @@ const Home = () => {
                 <motion.div
                     initial={{
                         x: "-30vw",
-                        y: "-48vh",
+                        y: "-52vw",
                         rotate: 150
                     }}
                     animate={{
-                        x: "-14vw",
-                        y: "-16vh",
+                        x: "-10vw",
+                        y: "-12vw",
                         rotate: 150
                     }}
                     transition={{
                         type: "spring",
-                        stiffness: 150,
-                        damping: 16
+                        stiffness: 100,
+                        damping: 12
                     }}
                     className="h-[84vh] w-[10%] bg-gradient-to-tr from-[#dd5090] to-[#dd9050] rounded-t-full">    
                 </motion.div>
@@ -46,7 +46,7 @@ const Home = () => {
                     }}
                     transition={{
                         type: "tween",
-                        duration: 0.6,
+                        duration: 0.8,
                         ease: "easeOut"
                     }}
                     className="w-[65%] text-center text-6xl text-[#e4e6e8]"
@@ -56,19 +56,19 @@ const Home = () => {
 
                 <motion.div
                     initial={{
-                        x: "26vw",
-                        y: "24vh",
+                        x: "28vw",
+                        y: "28vw",
                         rotate: -30
                     }}
                     animate={{
-                        x: "10vw",
-                        y: "-12vh",
+                        x: "8vw",
+                        y: "-12vw",
                         rotate: -30
                     }}
                     transition={{
                         type: "spring",
-                        stiffness: 150,
-                        damping: 16
+                        stiffness: 100,
+                        damping: 12
                     }}
                     className="h-[84vh] w-[10%] bg-gradient-to-tl from-[#dd5090] to-[#dd9050] rounded-t-full">    
                 </motion.div>
