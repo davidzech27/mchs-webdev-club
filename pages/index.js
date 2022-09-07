@@ -14,7 +14,7 @@ const Home = () => {
                 <h1>Build and deploy impactful websites.</h1>
             </FadeInText>
 
-            <FromOffScreen from="left" className="absolute top-[9vh] left-[-5vw]">
+            <FromOffScreen from="left" className="absolute top-[10vh] left-[-5vw]">
                 <div className="h-[84vh] w-[10vw] bg-gradient-to-tr from-[#dd5090] to-[#dd9050] rounded-t-full"></div>
             </FromOffScreen>
 

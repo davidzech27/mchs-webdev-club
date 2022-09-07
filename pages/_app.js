@@ -10,7 +10,8 @@ const App = ({ Component }) => {
         
         <div className="min-h-screen w-screen
                       bg-[#050913]
-                        relative"
+                        relative
+                        -z-50"
         >
             <Component />
         </div>
