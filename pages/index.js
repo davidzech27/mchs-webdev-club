@@ -1,5 +1,8 @@
 import { motion } from "framer-motion"
 
+import FromOffScreen from "/components/FromOffScreen"
+import FadeInText from "/components/FadeInText"
+
 
 const Home = () => {
 
@@ -7,74 +10,17 @@ const Home = () => {
 
     return (
         <>
-            <div className="h-screen w-screen
-                            flex justify-center
-                            pt-[18%]
-                            bg-[#050913]
-                            relative"
-            >
+            <FadeInText className="pt-[32vh] mx-auto w-[65%] text-8xl text-center font-sans font-bold text-[#e4e6e8] z-10">
+                <h1>Build and deploy impactful websites.</h1>
+            </FadeInText>
 
+            <FromOffScreen from="left" className="absolute top-[9vh] left-[-5vw]">
+                <div className="h-[84vh] w-[10vw] bg-gradient-to-tr from-[#dd5090] to-[#dd9050] rounded-t-full"></div>
+            </FromOffScreen>
 
-                <motion.div
-                    initial={{
-                        x: "-20vw",
-                        y: "-40vw",
-                        rotate: 150
-                    }}
-                    animate={{
-                        x: 0,
-                        y: 0,
-                        rotate: 150
-                    }}
-                    transition={{
-                        type: "spring",
-                        stiffness: 100,
-                        damping: 12
-                    }}
-                    className="absolute left-[-2vw] top-[16vw] h-[64vh] w-[10%] bg-gradient-to-tr from-[#dd5090] to-[#dd9050] rounded-t-full">    
-                </motion.div>
-
-
-                <motion.h1
-                    initial={{
-                        y: 100,
-                        opacity: 0
-                    }}
-                    animate={{
-                        y: 0,
-                        opacity: 1
-                    }}
-                    transition={{
-                        type: "tween",
-                        duration: 0.8,
-                        ease: "easeOut"
-                    }}
-                    className="w-[65%] text-8xl text-center font-sans font-bold text-[#e4e6e8] z-10"
-                >
-                    Build and deploy impactful websites.
-                </motion.h1>
-
-                <motion.div
-                    initial={{
-                        x: "20vw",
-                        y: "40vw",
-                        rotate: -30
-                    }}
-                    animate={{
-                        x: 0,
-                        y: 0,
-                        rotate: -30
-                    }}
-                    transition={{
-                        type: "spring",
-                        stiffness: 100,
-                        damping: 12
-                    }}
-                    className="absolute right-[0vw] bottom-[3vw] h-[84vh] w-[10%] bg-gradient-to-tl from-[#dd5090] to-[#dd9050] rounded-t-full">
-                </motion.div>
-
-
-            </div>
+            <FromOffScreen from="right" className="absolute bottom-[6vh] right-0">
+                <div className="h-[84vh] w-[10vw] bg-gradient-to-tl from-[#dd5090] to-[#dd9050] rounded-t-full"></div>
+            </FromOffScreen>
         </>
     )
 }
