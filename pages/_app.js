@@ -11,9 +11,8 @@ const App = ({ Component }) => {
 
 			<div
 				className="min-h-screen w-screen
-                      bg-[#050913]
-                        relative
-                        -z-50"
+                         bg-[#050913]
+                           relative"
 			>
 				<Component />
 			</div>
