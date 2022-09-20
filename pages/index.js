@@ -17,7 +17,7 @@ const Home = () => {
 			<div className="absolute h-[60vw] w-[10vw] min-w-[84px] rotate-[150deg] bottom-[6vh] left-[-7.5vw] ">
 				<FromOffScreen className="absolute">
 					<div
-						className="h-[60vw] w-[10vw] min-w-[84px]
+						className="h-[100vw] w-[10vw] min-w-[84px]
                                bg-gradient-to-tr from-[#dd5090] to-[#dd9050] rounded-t-full"
 					></div>
 				</FromOffScreen>
@@ -53,7 +53,7 @@ const Home = () => {
 			<div className="absolute h-[60vw] w-[10vw] min-w-[84px] rotate-[-30deg] top-[6.5vh] right-[-3vw]">
 				<FromOffScreen className="absolute">
 					<div
-						className="h-[60vw] w-[10vw] min-w-[84px]
+						className="h-[100vw] w-[10vw] min-w-[84px]
                                bg-gradient-to-tl from-[#dd5090] to-[#dd9050] rounded-t-full"
 					></div>
 				</FromOffScreen>
