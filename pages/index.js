@@ -9,21 +9,21 @@ const Home = () => {
 		<>
 			<FadeInText
 				className="pt-[32vh] mx-auto w-[75%]
-                           text-[6.67vw] leading-none text-center font-sans font-bold text-[#e4e6e8] relative z-10"
+                           text-[calc(3.380vw+47.324px)] leading-none text-center font-sans font-bold text-[#e4e6e8] relative z-10"
 			>
 				<h1>Build and deploy impactful websites</h1>
 			</FadeInText>
 
-			<div className="absolute h-[60vw] w-[10vw] min-w-[84px] rotate-[150deg] bottom-[6vh] left-[-7.5vw] ">
+			<div className="absolute h-[60vw] w-[calc(5.634vw+62.873px)] rotate-[150deg] bottom-[calc(302.536px-32.247vh)] left-[-7.5vw] ">
 				<FromOffScreen className="absolute">
 					<div
-						className="h-[100vw] w-[10vw] min-w-[84px]
+						className="h-[100vw] w-[calc(5.634vw+62.873px)]
                                bg-gradient-to-tr from-[#dd5090] to-[#dd9050] rounded-t-full"
 					></div>
 				</FromOffScreen>
 				<svg
-					className="absolute top-[7vw] left-[-5.5vw]"
-					width="7vw"
+					className="absolute top-[calc(9.277vw-32.789px)] left-[calc(-3.211vw-32.958px)]"
+					width="calc(3.831vw + 45.634px)"
 					height="698"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
@@ -36,8 +36,8 @@ const Home = () => {
 				</svg>
 
 				<svg
-					className="absolute top-[-29px] right-[-4vw]"
-					width="7vw"
+					className="absolute top-[calc(3.850vw-84.437px)] right-[calc(-1*(2.592vw+20.282px))]"
+					width="calc(3.831vw + 45.634px)"
 					height="698"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
@@ -50,17 +50,17 @@ const Home = () => {
 				</svg>
 			</div>
 
-			<div className="absolute h-[60vw] w-[10vw] min-w-[84px] rotate-[-30deg] top-[6.5vh] right-[-3vw]">
+			<div className="absolute h-[60vw] w-[calc(5.634vw+62.873px)] rotate-[-30deg] top-[6.5vh] right-[-3vw]">
 				<FromOffScreen className="absolute">
 					<div
-						className="h-[100vw] w-[10vw] min-w-[84px]
+						className="h-[100vw] w-[calc(5.634vw+62.873px)]
                                bg-gradient-to-tl from-[#dd5090] to-[#dd9050] rounded-t-full"
 					></div>
 				</FromOffScreen>
 
 				<svg
-					className="absolute top-[2.5vw] right-[-4vw]"
-					width="7vw"
+					className="absolute top-[calc(8.545vw-87.042px)] right-[calc(-1*(2.122vw+27.0423px))]"
+					width="calc(3.831vw + 45.634px)"
 					height="698"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
@@ -73,8 +73,8 @@ const Home = () => {
 				</svg>
 
 				<svg
-					className="absolute top-[10vw] left-[-4vw]"
-					width="7vw"
+					className="absolute top-[calc(12.582vw-37.183px)] left-[calc(-1*(2.122vw+27.0423px))]"
+					width="calc(3.831vw + 45.634px)"
 					height="698"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
