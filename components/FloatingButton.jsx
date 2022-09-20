@@ -103,7 +103,7 @@ const FloatingButton = () => {
 					repeat: Infinity,
 					delay: 2
 				}}
-				className="absolute md:top-[62%] top-[54%] left-0 right-0 mx-auto w-[94px] h-[94px] rounded-full border-[4px] border-[#e4e6e8] bg-[#161922] hover:bg-[#1f232c] transition duration-700 cursor-pointer"
+				className="mt-[calc(2.629vw+10.141px)] mx-auto w-[94px] h-[94px] rounded-full border-[4px] border-[#e4e6e8] bg-[#161922] hover:bg-[#1f232c] transition duration-700 cursor-pointer relative z-10"
 			>
 				<svg
 					className="absolute top-[34px] left-0 right-0 mx-auto"

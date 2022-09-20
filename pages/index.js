@@ -14,6 +14,8 @@ const Home = () => {
 				<h1>Build and deploy impactful websites</h1>
 			</FadeInText>
 
+			<FloatingButton />
+
 			<div className="absolute h-[60vw] w-[calc(5.634vw+62.873px)] rotate-[150deg] bottom-[calc(302.536px-32.247vh)] left-[-7.5vw] ">
 				<FromOffScreen className="absolute">
 					<div
@@ -86,8 +88,6 @@ const Home = () => {
 					/>
 				</svg>
 			</div>
-
-			<FloatingButton />
 		</>
 	)
 }
