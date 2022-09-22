@@ -15,7 +15,7 @@ const Home = () => {
                            leading-none text-center font-sans font-bold text-[#e4e6e8] relative z-10"
 				style={{
 					padding: `${useResponsiveDimension({
-						mobile: 120,
+						mobile: 128,
 						desktop: 264,
 						responsiveUnit: "vh"
 					})} 0 0 0`,
@@ -35,13 +35,17 @@ const Home = () => {
 			<FloatingButton />
 
 			<div
-				className="absolute h-[60vw] rotate-[150deg] left-[-7.5vw]"
+				className="absolute h-[60vw] rotate-[150deg]"
 				style={{
 					width: useResponsiveDimension({ mobile: 84, desktop: 144 }),
 					bottom: useResponsiveDimension({
 						mobile: 112,
 						desktop: 36.5,
 						responsiveUnit: "vh"
+					}),
+					left: useResponsiveDimension({
+						mobile: -12,
+						desktop: -108
 					})
 				}}
 			>
@@ -105,10 +109,14 @@ const Home = () => {
 			</div>
 
 			<div
-				className="absolute h-[60vw] rotate-[-30deg] top-[6.5vh] right-[-3vw]"
+				className="absolute h-[60vw] rotate-[-30deg] top-[6.5vh]"
 				style={{
 					width: useResponsiveDimension({ mobile: 84, desktop: 144 }),
-					top: useResponsiveDimension({ mobile: 10, desktop: 44.2 })
+					top: useResponsiveDimension({ mobile: 10, desktop: 44.2 }),
+					right: useResponsiveDimension({
+						mobile: -12,
+						desktop: -43.2
+					})
 				}}
 			>
 				<FromOffScreen
