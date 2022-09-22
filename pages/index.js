@@ -15,12 +15,12 @@ const Home = () => {
                            leading-none text-center font-sans font-bold text-[#e4e6e8] relative z-10"
 				style={{
 					padding: `${useResponsiveDimension({
-						mobile: 128,
+						mobile: 132,
 						desktop: 264,
 						responsiveUnit: "vh"
 					})} 0 0 0`,
 					fontSize: useResponsiveDimension({
-						mobile: 60,
+						mobile: 58,
 						desktop: 96
 					})
 				}}
