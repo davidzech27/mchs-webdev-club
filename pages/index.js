@@ -4,28 +4,58 @@ import FromOffScreen from "/components/FromOffScreen"
 import FadeInText from "/components/FadeInText"
 import FloatingButton from "/components/FloatingButton"
 
+import useResponsiveDimension from "/hooks/useResponsiveDimension"
+
 const Home = () => {
 	return (
 		<>
+			{/* at small screen sizes make everything closer to middle of screen vertically */}
 			<FadeInText
 				className="pt-[32vh] mx-auto w-[75%]
-                           text-[calc(3.380vw+47.324px)] leading-none text-center font-sans font-bold text-[#e4e6e8] relative z-10"
+                           leading-none text-center font-sans font-bold text-[#e4e6e8] relative z-10"
+				style={{
+					fontSize: useResponsiveDimension({
+						mobile: 60,
+						desktop: 96
+					})
+				}}
 			>
 				<h1>Build and deploy impactful websites</h1>
 			</FadeInText>
 
 			<FloatingButton />
 
-			<div className="absolute h-[60vw] w-[calc(5.634vw+62.873px)] rotate-[150deg] bottom-[calc(302.536px-32.247vh)] left-[-7.5vw] ">
-				<FromOffScreen className="absolute">
-					<div
-						className="h-[100vw] w-[calc(5.634vw+62.873px)]
+			<div
+				className="absolute h-[60vw] rotate-[150deg] left-[-7.5vw]"
+				style={{
+					width: useResponsiveDimension({ mobile: 84, desktop: 144 }),
+					bottom: useResponsiveDimension({
+						mobile: 87.5,
+						desktop: 36.5,
+						responsiveUnit: "vh"
+					})
+				}}
+			>
+				<FromOffScreen
+					className="absolute h-[100vw] w-full
                                bg-gradient-to-tr from-[#dd5090] to-[#dd9050] rounded-t-full"
-					></div>
-				</FromOffScreen>
+				></FromOffScreen>
 				<svg
-					className="absolute top-[calc(9.277vw-32.789px)] left-[calc(-3.211vw-32.958px)]"
-					width="calc(3.831vw + 45.634px)"
+					className="absolute"
+					width={useResponsiveDimension({
+						mobile: 60,
+						desktop: 100.8
+					})}
+					style={{
+						top: useResponsiveDimension({
+							mobile: 2,
+							desktop: 100.8
+						}),
+						left: useResponsiveDimension({
+							mobile: -45,
+							desktop: -79.2
+						})
+					}}
 					height="698"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
@@ -38,8 +68,21 @@ const Home = () => {
 				</svg>
 
 				<svg
-					className="absolute top-[calc(3.850vw-84.437px)] right-[calc(-1*(2.592vw+20.282px))]"
-					width="calc(3.831vw + 45.634px)"
+					className="absolute"
+					width={useResponsiveDimension({
+						mobile: 60,
+						desktop: 100.8
+					})}
+					style={{
+						top: useResponsiveDimension({
+							mobile: -70,
+							desktop: -29
+						}),
+						right: useResponsiveDimension({
+							mobile: -30,
+							desktop: -57.6
+						})
+					}}
 					height="698"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
@@ -52,17 +95,33 @@ const Home = () => {
 				</svg>
 			</div>
 
-			<div className="absolute h-[60vw] w-[calc(5.634vw+62.873px)] rotate-[-30deg] top-[6.5vh] right-[-3vw]">
-				<FromOffScreen className="absolute">
-					<div
-						className="h-[100vw] w-[calc(5.634vw+62.873px)]
+			<div
+				className="absolute h-[60vw] rotate-[-30deg] top-[6.5vh] right-[-3vw]"
+				style={{
+					width: useResponsiveDimension({ mobile: 84, desktop: 144 })
+				}}
+			>
+				<FromOffScreen
+					className="absolute h-[100vw] w-full
                                bg-gradient-to-tl from-[#dd5090] to-[#dd9050] rounded-t-full"
-					></div>
-				</FromOffScreen>
+				></FromOffScreen>
 
 				<svg
-					className="absolute top-[calc(8.545vw-87.042px)] right-[calc(-1*(2.122vw+27.0423px))]"
-					width="calc(3.831vw + 45.634px)"
+					className="absolute"
+					width={useResponsiveDimension({
+						mobile: 60,
+						desktop: 100.8
+					})}
+					style={{
+						top: useResponsiveDimension({
+							mobile: -55,
+							desktop: 36
+						}),
+						right: useResponsiveDimension({
+							mobile: -35,
+							desktop: -57.6
+						})
+					}}
 					height="698"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
@@ -75,8 +134,21 @@ const Home = () => {
 				</svg>
 
 				<svg
-					className="absolute top-[calc(12.582vw-37.183px)] left-[calc(-1*(2.122vw+27.0423px))]"
-					width="calc(3.831vw + 45.634px)"
+					className="absolute"
+					width={useResponsiveDimension({
+						mobile: 60,
+						desktop: 100.8
+					})}
+					style={{
+						top: useResponsiveDimension({
+							mobile: 10,
+							desktop: 144
+						}),
+						left: useResponsiveDimension({
+							mobile: -35,
+							desktop: -57.6
+						})
+					}}
 					height="698"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"

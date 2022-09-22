@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 
-const FadeInText = ({ children, className }) => {
+const FadeInText = ({ children, className, style }) => {
 	return (
 		<motion.div
 			initial={{
@@ -22,6 +22,7 @@ const FadeInText = ({ children, className }) => {
 				}
 			}}
 			className={className}
+			style={style}
 		>
 			{children}
 		</motion.div>

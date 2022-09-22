@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 
-const FromOffScreen = ({ children, className }) => {
+const FromOffScreen = ({ children, className, style }) => {
 	return (
 		<motion.div
 			initial={{
@@ -15,6 +15,7 @@ const FromOffScreen = ({ children, className }) => {
 				damping: 12
 			}}
 			className={className}
+			style={style}
 		>
 			{children}
 		</motion.div>
