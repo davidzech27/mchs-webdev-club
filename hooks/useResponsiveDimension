@@ -1,10 +1,10 @@
 const screenDimensions = {
 	vw: {
-		mobile: 375,
+		mobile: 320,
 		desktop: 1440
 	},
 	vh: {
-		mobile: 667,
+		mobile: 568,
 		desktop: 825
 	}
 }

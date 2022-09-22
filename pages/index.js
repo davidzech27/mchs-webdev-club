@@ -11,16 +11,25 @@ const Home = () => {
 		<>
 			{/* at small screen sizes make everything closer to middle of screen vertically */}
 			<FadeInText
-				className="pt-[32vh] mx-auto w-[75%]
+				className="mx-auto w-[90%]
                            leading-none text-center font-sans font-bold text-[#e4e6e8] relative z-10"
 				style={{
+					padding: `${useResponsiveDimension({
+						mobile: 120,
+						desktop: 264,
+						responsiveUnit: "vh"
+					})} 0 0 0`,
 					fontSize: useResponsiveDimension({
 						mobile: 60,
 						desktop: 96
 					})
 				}}
 			>
-				<h1>Build and deploy impactful websites</h1>
+				<h1>
+					Build and deploy
+					<br />
+					impactful websites
+				</h1>
 			</FadeInText>
 
 			<FloatingButton />
@@ -30,7 +39,7 @@ const Home = () => {
 				style={{
 					width: useResponsiveDimension({ mobile: 84, desktop: 144 }),
 					bottom: useResponsiveDimension({
-						mobile: 87.5,
+						mobile: 112,
 						desktop: 36.5,
 						responsiveUnit: "vh"
 					})
@@ -98,7 +107,8 @@ const Home = () => {
 			<div
 				className="absolute h-[60vw] rotate-[-30deg] top-[6.5vh] right-[-3vw]"
 				style={{
-					width: useResponsiveDimension({ mobile: 84, desktop: 144 })
+					width: useResponsiveDimension({ mobile: 84, desktop: 144 }),
+					top: useResponsiveDimension({ mobile: 10, desktop: 44.2 })
 				}}
 			>
 				<FromOffScreen
