@@ -9,13 +9,7 @@ const App = ({ Component }) => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<div
-				className="min-h-screen w-screen
-                         bg-[#050913]
-                           relative"
-			>
-				<Component />
-			</div>
+			<Component />
 		</>
 	)
 }
