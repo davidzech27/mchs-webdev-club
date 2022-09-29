@@ -1,7 +1,7 @@
-import { useCallback } from "react"
+import { useCallback, useState } from "react"
 import { loadSlim } from "tsparticles-slim"
 import Particles from "react-particles"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 
 import FloatingButton from "/components/FloatingButton"
 
@@ -38,6 +38,8 @@ const SecondPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 		}
 	}
 
+	const [particlesOn, setParticlesOn] = useState(false)
+
 	return (
 		<div
 			ref={pageRefs.secondPage}
@@ -57,7 +59,7 @@ const SecondPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 			>
 				<Particles
 					init={particlesInit}
-					className="h-[78vh]"
+					className="desktop:h-[620px] lgmobile:h-[620px] mdmobile:h-[620px] smmobile:h-[620px] tablet:h-[620px]"
 					options={{
 						fpsLimit: 20,
 						particles: {
@@ -106,18 +108,7 @@ const SecondPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 					}}
 				/>
 			</div>
-			<div
-				className="relative"
-				style={{
-					margin: `${useResponsiveDimension({
-						mobile: 40,
-						desktop: 244
-					})} ${useResponsiveDimension({
-						mobile: 20,
-						desktop: 40
-					})} 0 0`
-				}}
-			>
+			<div className="relative desktop:mt-[248px] lgmobile:mt-[17.3vh] mdmobile:mt-[124px] smmobile:mt-[90px] tablet:mt-[196px]">
 				<motion.div
 					animate={pageStatus}
 					variants={{
@@ -131,23 +122,23 @@ const SecondPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 					className="flex flex-col"
 					style={{
 						fontSize: useResponsiveDimension({
-							mobile: 28,
+							mobile: 26,
 							desktop: 44
 						}),
 						gap: useResponsiveDimension({
-							mobile: 20,
+							mobile: 25,
 							desktop: 40
 						})
 					}}
 				>
 					<motion.div variants={textVariants}>
-						Be guided by experienced developers
+						Learn from experienced developers
 					</motion.div>
 					<motion.div variants={textVariants}>
-						Learn by building
+						Build original projects
 					</motion.div>
 					<motion.div variants={textVariants}>
-						Create original things
+						Create engaging experiences
 					</motion.div>
 				</motion.div>
 
@@ -157,18 +148,9 @@ const SecondPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 					duration={0.4}
 					delay={1}
 					pointing="right"
-					className="absolute"
-					style={{
-						bottom: useResponsiveDimension({
-							mobile: 40,
-							desktop: 99,
-							responsiveUnit: "vh"
-						}),
-						left: useResponsiveDimension({
-							mobile: 0,
-							desktop: 156
-						})
-					}}
+					className="relative
+                               desktop:top-[38px] lgmobile:top-[40px] mdmobile:top-[30px] smmobile:top-[28px] tablet:top-[38px]
+                               desktop:left-[156px] lgmobile:left-[34px] mdmobile:left-[31px] smmobile:left-[28px] tablet:left-[67px]"
 				/>
 			</div>
 

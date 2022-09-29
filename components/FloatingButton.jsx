@@ -48,7 +48,7 @@ const FloatingButton = ({
 				>
 					<div
 						onClick={onClick}
-						className="h-[94px] w-[94px] rounded-full border-[4px] border-text bg-[#161922] hover:bg-[#1f232c] shadow-xl shadow-[rgba(228,230,232,0.15)] hover:shadow-[rgba(228,230,232,0.20)] transition duration-700 cursor-pointer relative z-10"
+						className="h-[94px] w-[94px] rounded-full border-[4px] border-text bg-[#161922] hover:bg-[#1f232c] shadow-xl shadow-[rgba(228,230,232,0.17)] hover:shadow-[rgba(228,230,232,0.22)] transition duration-700 cursor-pointer relative z-10"
 					>
 						<div
 							className={`

@@ -40,22 +40,13 @@ const FirstPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 						duration: 1.4
 					}
 				}}
-				className="mx-auto w-[90%]
-                           leading-none text-center font-bold relative z-20"
-				style={{
-					padding: `${useResponsiveDimension({
-						mobile: 132,
-						desktop: 264,
-						responsiveUnit: "vh"
-					})} 0 0 0`,
-					fontSize: useResponsiveDimension({
-						mobile: 58,
-						desktop: 96
-					})
-				}}
+				className="mx-auto w-[84%] mdmobile:w-[79%] text-center font-bold relative z-20
+                           desktop:text-[96px] lgmobile:text-[58px] mdmobile:text-[54px] smmobile:text-[52px] tablet:text-[72px]
+                           desktop:pt-[282px] lgmobile:pt-[27.6vh] mdmobile:pt-[204px] smmobile:pt-[190px] tablet:pt-[280px]
+                           desktop:leading-tight lgmobile:leading-[1.2] mdmobile:leading-[1.15] smmobile:leading-none tablet:leading-tight"
 			>
 				<h1>
-					Build and deploy
+					Develop and deploy
 					<br />
 					impactful websites
 				</h1>
@@ -64,24 +55,14 @@ const FirstPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 			<FloatingButton
 				status={pageStatus}
 				onClick={goToNextPage}
-				className="flex justify-center w-screen"
-				style={{
-					margin: `${useResponsiveDimension({
-						mobile: 18,
-						desktop: 48
-					})} 0 0 0`
-				}}
+				className="flex justify-center w-screen
+                           desktop:mt-[48px] lgmobile:mt-[5vh] mdmobile:mt-[23px] smmobile:mt-[20px] tablet:mt-[30px]"
 			/>
 
 			<div
-				className="absolute h-[60vw] rotate-[150deg]"
+				className="absolute h-[60vw] desktop:bottom-[36.5px] bottom-[122px] rotate-[150deg]"
 				style={{
 					width: useResponsiveDimension({ mobile: 84, desktop: 144 }),
-					bottom: useResponsiveDimension({
-						mobile: 112,
-						desktop: 36.5,
-						responsiveUnit: "vh"
-					}),
 					left: useResponsiveDimension({
 						mobile: -12,
 						desktop: -108
@@ -160,10 +141,9 @@ const FirstPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 				</svg>
 			</div>
 			<div
-				className="absolute h-[60vw] rotate-[-30deg]"
+				className="absolute h-[60vw] desktop:top-[44.2px] top-[50px] rotate-[-30deg]"
 				style={{
 					width: useResponsiveDimension({ mobile: 84, desktop: 144 }),
-					top: useResponsiveDimension({ mobile: 10, desktop: 44.2 }),
 					right: useResponsiveDimension({
 						mobile: -12,
 						desktop: -43.2
