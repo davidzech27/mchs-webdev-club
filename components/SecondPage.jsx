@@ -108,7 +108,7 @@ const SecondPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 					}}
 				/>
 			</div>
-			<div className="relative desktop:mt-[248px] lgmobile:mt-[17.3vh] mdmobile:mt-[100px] smmobile:mt-[66px] tablet:mt-[196px]">
+			<div className="relative desktop:mt-[248px] lgmobile:mt-[17.3vh] mdmobile:mt-[80px] smmobile:mt-[52px] tablet:mt-[196px]">
 				<motion.div
 					animate={pageStatus}
 					variants={{
