@@ -108,14 +108,14 @@ const SecondPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 					}}
 				/>
 			</div>
-			<div className="relative desktop:mt-[248px] lgmobile:mt-[17.3vh] mdmobile:mt-[124px] smmobile:mt-[90px] tablet:mt-[196px]">
+			<div className="relative desktop:mt-[248px] lgmobile:mt-[17.3vh] mdmobile:mt-[100px] smmobile:mt-[66px] tablet:mt-[196px]">
 				<motion.div
 					animate={pageStatus}
 					variants={{
 						visible: {
 							transition: {
 								staggerChildren: 0.2,
-								delayChildren: 0.4
+								delayChildren: 0.25
 							}
 						}
 					}}
@@ -146,7 +146,7 @@ const SecondPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 					status={pageStatus}
 					onClick={goToNextPage}
 					duration={0.4}
-					delay={1}
+					delay={0.85}
 					pointing="right"
 					className="relative
                                desktop:top-[38px] lgmobile:top-[40px] mdmobile:top-[30px] smmobile:top-[28px] tablet:top-[38px]
@@ -164,7 +164,7 @@ const SecondPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 						x: 0,
 						transition: {
 							duration: 0.4,
-							delay: 0.4,
+							delay: 0.3,
 							ease: "easeOut"
 						}
 					}
