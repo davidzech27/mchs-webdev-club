@@ -40,9 +40,9 @@ const FirstPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 						duration: 1.4
 					}
 				}}
-				className="mx-auto w-[84%] mdmobile:w-[79%] text-center font-bold relative z-20
-                           desktop:text-[96px] lgmobile:text-[58px] mdmobile:text-[54px] smmobile:text-[52px] tablet:text-[72px]
-                           desktop:pt-[282px] lgmobile:pt-[27.6vh] mdmobile:pt-[204px] smmobile:pt-[190px] tablet:pt-[280px]
+				className="mx-auto w-[80%] mdmobile:w-[79%] text-center font-bold relative z-20
+                           desktop:text-[96px] lgmobile:text-[58px] mdmobile:text-[54px] smmobile:text-[40px] tablet:text-[72px]
+                           desktop:pt-[282px] lgmobile:pt-[28.5vh] mdmobile:pt-[204px] smmobile:pt-[190px] tablet:pt-[280px]
                            desktop:leading-tight lgmobile:leading-[1.2] mdmobile:leading-[1.15] smmobile:leading-none tablet:leading-tight"
 			>
 				<h1>
