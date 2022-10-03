@@ -41,7 +41,7 @@ const FirstPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 					}
 				}}
 				className="mx-auto w-[80%] mdmobile:w-[79%] text-center font-bold relative z-20
-                           desktop:text-[96px] lgmobile:text-[58px] mdmobile:text-[54px] smmobile:text-[40px] tablet:text-[72px]
+                           desktop:text-[96px] lgmobile:text-[58px] mdmobile:text-[54px] smmobile:text-[50px] tablet:text-[72px]
                            desktop:pt-[282px] lgmobile:pt-[28.5vh] mdmobile:pt-[204px] smmobile:pt-[190px] tablet:pt-[280px]
                            desktop:leading-tight lgmobile:leading-[1.2] mdmobile:leading-[1.15] smmobile:leading-none tablet:leading-tight"
 			>
