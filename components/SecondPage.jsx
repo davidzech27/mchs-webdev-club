@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import { loadSlim } from "tsparticles-slim"
 import Particles from "react-particles"
 import { motion } from "framer-motion"
@@ -35,10 +35,25 @@ const SecondPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 				duration: 0.4,
 				ease: "easeOut"
 			}
+		},
+		exited: {
+			opacity: 0,
+			transition: {
+				duration: 0.4,
+				ease: "easeOut"
+			}
 		}
 	}
 
 	const [particlesOn, setParticlesOn] = useState(false)
+
+	useEffect(() => {
+		if (pageStatus === "visible") {
+			setParticlesOn(true)
+		} else if (pageStatus === "exited") {
+			setTimeout(() => setParticlesOn(false), 500)
+		}
+	}, [pageStatus])
 
 	return (
 		<div
@@ -50,65 +65,65 @@ const SecondPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 				style={{
 					padding: `0 ${useResponsiveDimension({
 						mobile: 14,
-						desktop: 56
+						desktop: 60
 					})} 0 ${useResponsiveDimension({
 						mobile: 18,
 						desktop: 400
 					})}`
 				}}
 			>
-				<Particles
-					init={particlesInit}
-					className="desktop:h-[620px] lgmobile:h-[620px] mdmobile:h-[620px] smmobile:h-[620px] tablet:h-[620px]"
-					options={{
-						fpsLimit: 20,
-						particles: {
-							color: {
-								value: "#E4E6E8"
-							},
-							move: {
-								direction: "none",
-								enable: true,
-								outModes: {
-									default: "bounce"
+				{particlesOn && (
+					<Particles
+						init={particlesInit}
+						className="desktop:h-[666px] lgmobile:h-[610px] mdmobile:h-[580px] smmobile:h-[550px] tablet:h-[600px]"
+						options={{
+							fpsLimit: 20,
+							particles: {
+								color: {
+									value: "#E4E6E8"
 								},
-								random: true,
-								speed: 3,
-								straight: false
-							},
-							number: {
-								density: {
+								move: {
+									direction: "none",
 									enable: true,
-									area: 800
+									outModes: {
+										default: "bounce"
+									},
+									random: true,
+									speed: 3,
+									straight: false
 								},
-								value: 200
+								number: {
+									density: {
+										enable: true,
+										area: 800
+									},
+									value: 200
+								},
+								opacity: {
+									value: 0.055
+								},
+								shape: {
+									type: "circle"
+								},
+								size: {
+									value: 1.05
+								},
+								links: {
+									color: "#E4E6E8",
+									distance: 120,
+									enable: true,
+									opacity: 0.55,
+									width: 1.05
+								},
+								smooth: true
 							},
-							opacity: {
-								value: 0.055
-							},
-							shape: {
-								type: "circle"
-							},
-							size: {
-								value: 1.05
-							},
-							links: {
-								color: "#E4E6E8",
-								distance: 120,
-								enable: true,
-								opacity: 0.55,
-								width: 1.05
-							},
-							smooth: true
-						},
-						pauseOnOutsideViewport: true,
-						pauseOnBlur: true,
-						fullScreen: false,
-						detectRetina: true
-					}}
-				/>
+							fullScreen: false,
+							detectRetina: true
+						}}
+					/>
+				)}
 			</div>
-			<div className="relative desktop:mt-[248px] lgmobile:mt-[17.3vh] mdmobile:mt-[80px] smmobile:mt-[52px] tablet:mt-[196px]">
+			<div className="relative desktop:mt-[248px] lgmobile:mt-[17.3vh] mdmobile:mt-[80px] smmobile:mt-[52px] tablet:mt-[194px]">
 				<motion.div
 					animate={pageStatus}
 					variants={{
@@ -119,7 +134,7 @@ const SecondPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 							}
 						}
 					}}
-					className="flex flex-col"
+					className="flex flex-col font-light"
 					style={{
 						fontSize: useResponsiveDimension({
 							mobile: 26,
@@ -149,8 +164,8 @@ const SecondPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 					delay={0.85}
 					pointing="right"
 					className="relative
-                               desktop:top-[38px] lgmobile:top-[40px] mdmobile:top-[30px] smmobile:top-[28px] tablet:top-[38px]
-                               desktop:left-[156px] lgmobile:left-[34px] mdmobile:left-[31px] smmobile:left-[28px] tablet:left-[67px]"
+                               desktop:top-[38px] lgmobile:top-[40px] mdmobile:top-[30px] smmobile:top-[28px] tablet:top-[34px]
+                               desktop:left-[156px] lgmobile:left-[30px] mdmobile:left-[27.5px] smmobile:left-[25px] tablet:left-[67px]"
 				/>
 			</div>
 
@@ -164,7 +179,7 @@ const SecondPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 						x: 0,
 						transition: {
 							duration: 0.4,
-							delay: 0.3,
+							delay: 0.35,
 							ease: "easeOut"
 						}
 					}

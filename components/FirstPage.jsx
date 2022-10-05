@@ -40,13 +40,14 @@ const FirstPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 						duration: 1.4
 					}
 				}}
-				className="mx-auto w-[80%] mdmobile:w-[79%] text-center font-bold relative z-20
-                           desktop:text-[96px] lgmobile:text-[58px] mdmobile:text-[54px] smmobile:text-[50px] tablet:text-[72px]
+				className="mx-auto w-[80%] text-center font-bold relative z-20
+                           desktop:text-[96px] lgmobile:text-[6.872vh] mdmobile:text-[54px] smmobile:text-[50px] tablet:text-[72px]
                            desktop:pt-[282px] lgmobile:pt-[28.5vh] mdmobile:pt-[204px] smmobile:pt-[190px] tablet:pt-[280px]
                            desktop:leading-tight lgmobile:leading-[1.2] mdmobile:leading-[1.15] smmobile:leading-none tablet:leading-tight"
 			>
 				<h1>
-					Develop and deploy
+					Develop{" "}
+					<span className="whitespace-nowrap">and deploy</span>
 					<br />
 					impactful websites
 				</h1>
@@ -56,7 +57,7 @@ const FirstPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 				status={pageStatus}
 				onClick={goToNextPage}
 				className="flex justify-center w-screen
-                           desktop:mt-[48px] lgmobile:mt-[5vh] mdmobile:mt-[23px] smmobile:mt-[20px] tablet:mt-[30px]"
+                           desktop:mt-[48px] lgmobile:mt-[4vh] mdmobile:mt-[23px] smmobile:mt-[20px] tablet:mt-[30px]"
 			/>
 
 			<div

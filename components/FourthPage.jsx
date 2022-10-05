@@ -2,19 +2,114 @@ import { motion } from "framer-motion"
 
 import usePageStatus from "/hooks/usePageStatus"
 
-const FourthPage = ({ pageRefs, currentPage }) => {
+const FourthPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 	const pageStatus = usePageStatus(currentPage, pageRefs.fourthPage)
+
+	const goToNextPage = () => {
+		setCurrentPage(pageRefs.fifthPage)
+		pageRefs.thirdPageContainer.current.scrollTo({
+			left: pageRefs.fifthPage.current.offsetLeft,
+			behavior: "smooth"
+		})
+	}
+
+	const onSubmit = () => {
+		goToNextPage()
+	}
+
+	const textVariants = {
+		hidden: {
+			opacity: 0
+		},
+		visible: {
+			opacity: 1,
+			transition: {
+				duration: 0.4,
+				delay: 0.4,
+				ease: "easeOut"
+			}
+		},
+		exited: {
+			opacity: 0,
+			transition: {
+				duration: 0.4,
+				ease: "easeOut"
+			}
+		}
+	}
+
+	const textboxVariants = {
+		hidden: {
+			x: -100,
+			opacity: 0
+		},
+		visible: {
+			x: 0,
+			opacity: 1,
+			transition: {
+				duration: 0.4,
+				delay: 0.4,
+				ease: "easeOut"
+			}
+		},
+		exited: {
+			x: 100,
+			opacity: 0,
+			transition: {
+				duration: 0.4,
+				ease: "easeOut"
+			}
+		}
+	}
 
 	return (
 		<div
 			ref={pageRefs.fourthPage}
-			className="h-screen w-screen flex flex-col justify-center items-center relative gap-[70px] font-semibold"
+			className="h-screen w-screen flex flex-col items-center relative"
 		>
-			<div className="text-9xl">Thank you!</div>
+			<motion.div
+				animate={pageStatus}
+				variants={textVariants}
+				className="mx-auto font-extralight tracking-wide
+                           desktop:text-8xl lgmobile:text-5xl mdmobile:text-5xl smmobile:text-5xl tablet:text-8xl
+                           desktop:mt-40 lgmobile:mt-[280px] mdmobile:mt-[225px] smmobile:mt-[200px] tablet:mt-[148px]"
+			>
+				Get involved
+			</motion.div>
 
-			<div className="text-6xl font-extralight">
-				We will notify you shortly with further details
-			</div>
+			<motion.div
+				animate={pageStatus}
+				variants={textboxVariants}
+				className="desktop:h-56 tablet:h-36 w-[70%] mt-[52px] rounded-full desktop:border-4 tablet:border-4 border-[1.5px] border-text flex"
+			>
+				<input
+					type="text"
+					placeholder="youremail@example.com"
+					className="text-[64px] font-extralight h-full w-full rounded-l-full bg-[#171922] bg-opacity-[0.45] hover:bg-opacity-[0.75] focus:bg-opacity-[0.75] outline-none transition duration-500
+                               desktop:text-[64px] lgmobile:text-[16px] mdmobile:text-[17px] smmobile:text-[15.5px] tablet:text-[44px]
+                               desktop:pl-16 lgmobile:pl-6 mdmobile:pl-[20px] smmobile:pl-[17.5px] tablet:pl-10"
+				></input>
+				<button
+					onClick={onSubmit}
+					className="top-0 right-0 bg-[#171922] hover:bg-[#1d1f28] w-[22.22%] h-full rounded-r-full desktop:border-l-4 tablet:border-l-4 border-l-[1.5px] border-text transition duration-500 cursor-pointer flex justify-center items-center"
+				>
+					<svg
+						className="-rotate-90"
+						width="66%"
+						height="50"
+						viewBox="0 0 72 35"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							fillRule="evenodd"
+							clipRule="evenodd"
+							d="M35.7161 26.6208L5.90136 1.60324C4.4206 0.360737 2.21295 0.553881 0.970446 2.03464C-0.27206 3.5154 -0.0789178 5.72305 1.40184 6.96555L33.3471 33.7708C34.4565 34.7017 35.9738 34.8268 37.1877 34.2083C37.5919 34.0729 37.9779 33.8608 38.3243 33.5702L70.2696 6.76491C71.7503 5.52241 71.9435 3.31477 70.7009 1.834C69.4584 0.353243 67.2508 0.160099 65.77 1.40261L35.7161 26.6208Z"
+							fill="#e4e6e8"
+						/>
+					</svg>
+				</button>
+			</motion.div>
 		</div>
 	)
 }
