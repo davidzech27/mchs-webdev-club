@@ -1,9 +1,13 @@
+import { useState } from "react"
 import { motion } from "framer-motion"
 
 import usePageStatus from "/hooks/usePageStatus"
 
 const FourthPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 	const pageStatus = usePageStatus(currentPage, pageRefs.fourthPage)
+
+	const [emailInput, setEmailInput] = useState("")
+	const emailInputEmpty = emailInput === ""
 
 	const goToNextPage = () => {
 		setCurrentPage(pageRefs.fifthPage)
@@ -13,8 +17,21 @@ const FourthPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 		})
 	}
 
-	const onSubmit = () => {
-		goToNextPage()
+	const onSubmit = (e) => {
+		e.preventDefault()
+		if (!emailInputEmpty) {
+			goToNextPage()
+			fetch("/api/sendEmail", {
+				method: "post",
+				headers: {
+					Accept: "application/json",
+					"Content-Type": "application/json"
+				},
+				body: JSON.stringify({
+					email: emailInput
+				})
+			})
+		}
 	}
 
 	const textVariants = {
@@ -77,21 +94,28 @@ const FourthPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 				Get involved
 			</motion.div>
 
-			<motion.div
+			<motion.form
+				onSubmit={onSubmit}
 				animate={pageStatus}
 				variants={textboxVariants}
 				className="desktop:h-56 tablet:h-36 w-[70%] mt-[52px] rounded-full desktop:border-4 tablet:border-4 border-[1.5px] border-text flex"
 			>
 				<input
-					type="text"
+					type="email"
+					value={emailInput}
+					onChange={(e) => setEmailInput(e.target.value)}
 					placeholder="youremail@example.com"
 					className="text-[64px] font-extralight h-full w-full rounded-l-full bg-[#171922] bg-opacity-[0.45] hover:bg-opacity-[0.75] focus:bg-opacity-[0.75] outline-none transition duration-500
                                desktop:text-[64px] lgmobile:text-[16px] mdmobile:text-[17px] smmobile:text-[15.5px] tablet:text-[44px]
                                desktop:pl-16 lgmobile:pl-6 mdmobile:pl-[20px] smmobile:pl-[17.5px] tablet:pl-10"
-				></input>
+				/>
 				<button
-					onClick={onSubmit}
-					className="top-0 right-0 bg-[#171922] hover:bg-[#1d1f28] w-[22.22%] h-full rounded-r-full desktop:border-l-4 tablet:border-l-4 border-l-[1.5px] border-text transition duration-500 cursor-pointer flex justify-center items-center"
+					type="submit"
+					className={`top-0 right-0 bg-[#171922] ${
+						!emailInputEmpty
+							? "hover:bg-[#1d1f28]"
+							: "bg-opacity-[0.45] cursor-default"
+					} w-[22.22%] h-full rounded-r-full desktop:border-l-4 tablet:border-l-4 border-l-[1.5px] border-text transition duration-500 flex justify-center items-center`}
 				>
 					<svg
 						className="-rotate-90"
@@ -109,7 +133,7 @@ const FourthPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 						/>
 					</svg>
 				</button>
-			</motion.div>
+			</motion.form>
 		</div>
 	)
 }
