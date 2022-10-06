@@ -19,19 +19,24 @@ const sendEmailHandler = (req, res) => {
 				from: process.env.EMAIL_USERNAME,
 				to: email,
 				subject: "Connect with the Maria Carrillo web development club",
-				text: `Hello!
-                
-You sent us your email at http://mchswebdev.club, so you're probably interested in programming. In our club, there are exciting opportunites for people of all experience levels to develop and apply their real-world programming skills.
-
-If you're not yet familiar with programming or web development, you can learn these skills from our experienced developers and make original projects along the way. Or if you're already an avid programmer, you can work on a team with us to build novel and impactful websites. I have a ton of ideas for this, including websites for the benefit of our community, such as websites for our school or other clubs, or for entrepreneurial ventures, such as a new social media platform or chat app.
-                
-There so many exciting possibilities, but we'll need the support of as many passionate members as possible. Even students not at Maria Carrillo High School are invited to participate.
-
-Meeting times are very flexible, and could be in-person or online. Reach out to me if you have any questions!
-                
-David
-President of Maria Carrillo web development club
-Find us at our Discord server: ${process.env.DISCORD_INVITE_LINK}`
+				html: `Hello!
+                <br><br>
+                You sent us your email on <a href="http://mchswebdev.club">our website</a>, so you're probably interested in programming.
+                In our club, there are exciting opportunities for people of all experience levels to develop and apply real-world programming skills.
+                <br><br>
+                If you're not yet familiar with programming or web development, you can learn these skills from our experienced developers and create original projects along the way.
+                Or if you're already an avid programmer, you can work on a team with us to build novel and impactful websites.
+                We have lots of ideas for this, such as building a website to streamline our advocacy pass system or developing and promoting a new social media platform.
+                <br><br>
+                There are so many exciting possibilities for our club, but we'll need the support of as many enthusiastic, passionate members as possible.
+                Even students outside of Maria Carrillo High School are invited to participate.
+                <br><br>
+                You can find us at <a href="${process.env.DISCORD_INVITE_LINK}">our Discord server</a>.
+                Meeting times are dependent on your experience level, but are very flexible and could be in-person or online.
+                Reach out to me if you have any questions!
+                <br><br>
+                David<br>
+                President of Maria Carrillo web development club`
 			}
 
 			transporter.sendMail(messageToEmail)

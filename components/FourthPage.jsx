@@ -98,16 +98,16 @@ const FourthPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 				onSubmit={onSubmit}
 				animate={pageStatus}
 				variants={textboxVariants}
-				className="desktop:h-56 tablet:h-36 w-[70%] mt-[52px] rounded-full desktop:border-4 tablet:border-4 border-[1.5px] border-text flex"
+				className="desktop:h-56 tablet:h-36 w-[71%] mt-[52px] rounded-full desktop:border-4 tablet:border-4 border-[1.5px] border-text flex"
 			>
 				<input
 					type="email"
 					value={emailInput}
 					onChange={(e) => setEmailInput(e.target.value)}
-					placeholder="youremail@example.com"
-					className="text-[64px] font-extralight h-full w-full rounded-l-full bg-[#171922] bg-opacity-[0.45] hover:bg-opacity-[0.75] focus:bg-opacity-[0.75] outline-none transition duration-500
+					placeholder="YourEmail@example.com"
+					className="font-extralight h-full w-full rounded-l-full bg-[#171922] bg-opacity-[0.45] hover:bg-opacity-[0.75] focus:bg-opacity-[0.75] outline-none transition duration-500
                                desktop:text-[64px] lgmobile:text-[16px] mdmobile:text-[17px] smmobile:text-[15.5px] tablet:text-[44px]
-                               desktop:pl-16 lgmobile:pl-6 mdmobile:pl-[20px] smmobile:pl-[17.5px] tablet:pl-10"
+                               desktop:pl-16 lgmobile:pl-[22px] mdmobile:pl-[22px] smmobile:pl-[20px] tablet:pl-[44px]"
 				/>
 				<button
 					type="submit"

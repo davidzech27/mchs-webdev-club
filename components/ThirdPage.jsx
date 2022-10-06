@@ -74,8 +74,8 @@ const ThirdPage = ({ pageRefs, currentPage, setCurrentPage }) => {
                            desktop:leading-[49px] tablet:leading-[44px]"
 			>
 				In the Maria Carrillo web development club, our prime objective
-				is to provide opportunities for people of all experience levels
-				to develop{" "}
+				is to provide opportunities for students of all experience
+				levels to develop{" "}
 				<span
 					ref={wordRefs[0]}
 					className={italicizedWord === 0 ? "italic" : ""}
