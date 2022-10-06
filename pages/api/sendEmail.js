@@ -7,7 +7,7 @@ const sendEmailHandler = (req, res) => {
 		try {
 			const transporter = nodemailer.createTransport({
 				host: "mail.privateemail.com",
-				port: 587,
+				port: 465,
 				secureConnection: true,
 				auth: {
 					user: process.env.EMAIL_USERNAME,
