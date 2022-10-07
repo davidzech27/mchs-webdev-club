@@ -70,7 +70,7 @@ const ThirdPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 				animate={pageStatus}
 				variants={paragraphVariants}
 				className="font-extralight select-text relative z-10
-                           desktop:text-[30px] lgmobile:text-[2.18vh] mdmobile:text-[17.5px] smmobile:text-[15.5px] tablet:text-[24.5px]
+                           desktop:text-[30px] lgmobile:text-[2.18vh] mdmobile:text-[16.5px] smmobile:text-[14.5px] tablet:text-[24.5px]
                            desktop:leading-[49px] tablet:leading-[44px]"
 			>
 				In the Maria Carrillo web development club, our prime objective

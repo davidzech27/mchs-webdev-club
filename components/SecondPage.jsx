@@ -60,6 +60,8 @@ const SecondPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 			ref={pageRefs.secondPage}
 			className="h-screen w-screen grid grid-cols-2 overflow-y-hidden relative"
 		>
+			<div className="absolute bg-white bg-opacity-5 w-screen h-[98px] bottom-0"></div>
+
 			<div
 				className="flex justify-end items-center"
 				style={{
@@ -123,7 +125,7 @@ const SecondPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 					/>
 				)}
 			</div>
-			<div className="relative desktop:mt-[248px] lgmobile:mt-[17.3vh] mdmobile:mt-[80px] smmobile:mt-[52px] tablet:mt-[194px]">
+			<div className="relative desktop:mt-[248px] lgmobile:mt-[17.3vh] mdmobile:mt-[80px] smmobile:mt-[40px] tablet:mt-[194px]">
 				<motion.div
 					animate={pageStatus}
 					variants={{
@@ -164,7 +166,7 @@ const SecondPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 					delay={0.85}
 					pointing="right"
 					className="relative
-                               desktop:top-[38px] lgmobile:top-[40px] mdmobile:top-[30px] smmobile:top-[28px] tablet:top-[34px]
+                               desktop:top-[38px] lgmobile:top-[40px] mdmobile:top-[30px] smmobile:top-[24px] tablet:top-[34px]
                                desktop:left-[156px] lgmobile:left-[30px] mdmobile:left-[27.5px] smmobile:left-[25px] tablet:left-[67px]"
 				/>
 			</div>
