@@ -60,8 +60,6 @@ const SecondPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 			ref={pageRefs.secondPage}
 			className="h-screen w-screen grid grid-cols-2 overflow-y-hidden relative"
 		>
-			<div className="absolute bg-white bg-opacity-5 w-screen h-[98px] bottom-0"></div>
-
 			<div
 				className="flex justify-end items-center"
 				style={{
