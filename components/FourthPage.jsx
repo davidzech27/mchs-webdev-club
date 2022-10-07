@@ -17,20 +17,25 @@ const FourthPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 		})
 	}
 
-	const onSubmit = (e) => {
+	const onSubmit = async (e) => {
 		e.preventDefault()
 		if (!emailInputEmpty) {
 			goToNextPage()
-			fetch("/api/sendEmail", {
-				method: "post",
-				headers: {
-					Accept: "application/json",
-					"Content-Type": "application/json"
-				},
-				body: JSON.stringify({
-					email: emailInput
-				})
-			})
+
+			console.log(
+				await (
+					await fetch("/api/sendEmail", {
+						method: "post",
+						headers: {
+							Accept: "application/json",
+							"Content-Type": "application/json"
+						},
+						body: JSON.stringify({
+							email: emailInput
+						})
+					})
+				).json()
+			)
 		}
 	}
 

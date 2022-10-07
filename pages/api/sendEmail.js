@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer"
 
-const sendEmailHandler = (req, res) => {
+const sendEmailHandler = async (req, res) => {
 	if (req.method === "POST") {
 		const email = req.body.email
 
@@ -39,8 +39,6 @@ const sendEmailHandler = (req, res) => {
                 President of Maria Carrillo web development club`
 			}
 
-			transporter.sendMail(messageToEmail)
-
 			const messageToSelf = {
 				from: process.env.EMAIL_USERNAME,
 				to: process.env.SELF_EMAIL_USERNAME,
@@ -48,11 +46,16 @@ const sendEmailHandler = (req, res) => {
 				text: `Person with email address "${email}" wants to get involved in the WDC.`
 			}
 
-			transporter.sendMail(messageToSelf)
+			const [emailInfo, _] = await Promise.all([
+				transporter.sendMail(messageToEmail),
+				transporter.sendMail(messageToSelf)
+			])
 
-			res.status(200).end()
-		} catch {
-			res.status(500).end()
+			res.status(200).json(emailInfo)
+		} catch (error) {
+			res.status(500).send(
+				`An error has occurred sending you an email: ${error}`
+			)
 		}
 	} else {
 		res.status(405).end()

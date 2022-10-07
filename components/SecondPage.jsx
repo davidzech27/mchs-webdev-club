@@ -21,7 +21,7 @@ const SecondPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 
 	const particlesInit = useCallback(async (engine) => {
 		await loadSlim(engine)
-	})
+	}, [])
 
 	const textVariants = {
 		hidden: {
