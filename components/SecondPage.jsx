@@ -51,7 +51,11 @@ const SecondPage = ({ goToNextPage, transition }) => {
 			transition={transition}
 			className="h-screen w-screen grid grid-cols-2 overflow-hidden relative"
 		>
-			<div
+			<motion.div
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				exit={{ opacity: 0 }}
+				transition={{ duration: 1.2, ease: "easeOut" }}
 				className="flex justify-end items-center"
 				style={{
 					padding: `0 ${useResponsiveDimension({
@@ -111,7 +115,7 @@ const SecondPage = ({ goToNextPage, transition }) => {
 						detectRetina: true
 					}}
 				/>
-			</div>
+			</motion.div>
 			<div className="relative desktop:mt-[228px] lgmobile:mt-[17.3vh] mdmobile:mt-[80px] smmobile:mt-[40px] tablet:mt-[194px]">
 				<motion.div
 					initial="hidden"
@@ -121,7 +125,7 @@ const SecondPage = ({ goToNextPage, transition }) => {
 						visible: {
 							transition: {
 								staggerChildren: 0.2,
-								delayChildren: 0.25
+								delayChildren: 0.3
 							}
 						}
 					}}
@@ -147,7 +151,7 @@ const SecondPage = ({ goToNextPage, transition }) => {
 				<FloatingButton
 					onClick={goToNextPage}
 					duration={0.4}
-					delay={0.85}
+					delay={0.9}
 					pointing="right"
 					className="relative
                                desktop:top-[38px] lgmobile:top-[40px] mdmobile:top-[30px] smmobile:top-[24px] tablet:top-[34px]
