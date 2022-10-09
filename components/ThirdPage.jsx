@@ -39,7 +39,7 @@ const ThirdPage = ({ goToNextPage, transition }) => {
 						return 0
 					}
 				})
-			}, 3333)
+			}, 2500)
 
 			effectHasRun.current = true
 		}
@@ -76,7 +76,7 @@ const ThirdPage = ({ goToNextPage, transition }) => {
 					real-world
 				</span>{" "}
 				programming skills, and build{" "}
-				<span className={italicizedWord === 1 ? "italic font-normal tracking-tight" : ""}>
+				<span className={italicizedWord === 1 ? "italic font-medium tracking-tight" : ""}>
 					meaningful
 				</span>{" "}
 				projects while doing so. From landing pages to word counters to social media
@@ -86,7 +86,7 @@ const ThirdPage = ({ goToNextPage, transition }) => {
 				</span>{" "}
 				websites to help you learn web development. For members already proficient in web
 				development, we work in teams to create websites for the benefit of our{" "}
-				<span className={italicizedWord === 3 ? "italic font-normal tracking-tight" : ""}>
+				<span className={italicizedWord === 3 ? "italic font-medium tracking-tight" : ""}>
 					community
 				</span>
 				. This is an opportunity not just for those passionate about computer science, but
