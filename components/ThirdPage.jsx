@@ -39,7 +39,7 @@ const ThirdPage = ({ goToNextPage, transition }) => {
 						return 0
 					}
 				})
-			}, 2500)
+			}, 3000)
 
 			effectHasRun.current = true
 		}
