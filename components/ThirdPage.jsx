@@ -39,7 +39,7 @@ const ThirdPage = ({ goToNextPage, transition }) => {
 						return 0
 					}
 				})
-			}, 1000)
+			}, 3333)
 
 			effectHasRun.current = true
 		}
@@ -67,22 +67,30 @@ const ThirdPage = ({ goToNextPage, transition }) => {
 			<motion.p
 				{...paragraphAnimations}
 				className="font-extralight select-text relative z-10
-                           desktop:text-[30px] lgmobile:text-[2.18vh] mdmobile:text-[16.5px] smmobile:text-[14.5px] tablet:text-[24.5px]
+                           desktop:text-[30px] lgmobile:text-[2.235vh] mdmobile:text-[16.5px] smmobile:text-[14.5px] tablet:text-[24.5px]
                            desktop:leading-[49px] tablet:leading-[44px]"
 			>
 				In the Maria Carrillo web development club, our prime objective is to provide
 				opportunities for students of all experience levels to develop{" "}
-				<span className={italicizedWord === 0 ? "italic" : ""}>real-world</span> programming
-				skills, and build{" "}
-				<span className={italicizedWord === 1 ? "italic" : ""}>meaningful</span> projects
-				while doing so. From landing pages to word counters to social media platforms, we
-				guide you through the process of building{" "}
-				<span className={italicizedWord === 2 ? "italic" : ""}>impressive</span> websites to
-				help you learn web development. For members already proficient in web development,
-				we work in teams to create websites for the benefit of our{" "}
-				<span className={italicizedWord === 3 ? "italic" : ""}>community</span>. This is an
-				opportunity not just for those passionate about computer science, but for anyone
-				looking to acquire skills for an increasingly computer-dependent world.
+				<span className={italicizedWord === 0 ? "italic font-medium tracking-tight" : ""}>
+					real-world
+				</span>{" "}
+				programming skills, and build{" "}
+				<span className={italicizedWord === 1 ? "italic font-normal tracking-tight" : ""}>
+					meaningful
+				</span>{" "}
+				projects while doing so. From landing pages to word counters to social media
+				platforms, we guide you through the process of building{" "}
+				<span className={italicizedWord === 2 ? "italic font-medium tracking-tight" : ""}>
+					impressive
+				</span>{" "}
+				websites to help you learn web development. For members already proficient in web
+				development, we work in teams to create websites for the benefit of our{" "}
+				<span className={italicizedWord === 3 ? "italic font-normal tracking-tight" : ""}>
+					community
+				</span>
+				. This is an opportunity not just for those passionate about computer science, but
+				for anyone looking to acquire skills for an increasingly computer-dependent world.
 			</motion.p>
 			<FloatingButton
 				onClick={goToNextPage}
