@@ -2,23 +2,18 @@ import { motion } from "framer-motion"
 
 import FloatingButton from "/components/FloatingButton"
 
-import usePageStatus from "/hooks/usePageStatus"
 import useResponsiveDimension from "/hooks/useResponsiveDimension"
 
-const FirstPage = ({ pageRefs, currentPage, setCurrentPage }) => {
-	const pageStatus = usePageStatus(currentPage, pageRefs.firstPage)
-
-	const goToNextPage = () => {
-		setCurrentPage(pageRefs.secondPage)
-		window.scrollTo({
-			top: pageRefs.secondPage.current.offsetTop,
-			behavior: "smooth"
-		})
-	}
-
+const FirstPage = ({ goToNextPage, transition }) => {
 	return (
-		<div
-			ref={pageRefs.firstPage}
+		<motion.div
+			animate={{
+				y: 0
+			}}
+			exit={{
+				y: "-100vh"
+			}}
+			transition={transition}
 			className="h-screen w-screen overflow-hidden relative"
 		>
 			<motion.div
@@ -40,21 +35,19 @@ const FirstPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 						duration: 1.4
 					}
 				}}
-				className="mx-auto w-[80%] text-center font-bold relative z-20
+				className="mx-auto w-[80%] text-center font-light relative z-20
                            desktop:text-[96px] lgmobile:text-[6.872vh] mdmobile:text-[54px] smmobile:text-[50px] tablet:text-[72px]
                            desktop:pt-[282px] lgmobile:pt-[28.5vh] mdmobile:pt-[204px] smmobile:pt-[190px] tablet:pt-[280px]
                            desktop:leading-tight lgmobile:leading-[1.2] mdmobile:leading-[1.15] smmobile:leading-none tablet:leading-tight"
 			>
 				<h1>
-					Develop{" "}
-					<span className="whitespace-nowrap">and deploy</span>
+					Develop <span className="whitespace-nowrap">and deploy</span>
 					<br />
 					impactful websites
 				</h1>
 			</motion.div>
 
 			<FloatingButton
-				status={pageStatus}
 				onClick={goToNextPage}
 				className="flex justify-center w-screen
                            desktop:mt-[48px] lgmobile:mt-[4vh] mdmobile:mt-[23px] smmobile:mt-[20px] tablet:mt-[30px]"
@@ -63,7 +56,10 @@ const FirstPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 			<div
 				className="absolute h-[60vw] desktop:bottom-[36.5px] bottom-[122px] rotate-[150deg]"
 				style={{
-					width: useResponsiveDimension({ mobile: 84, desktop: 144 }),
+					width: useResponsiveDimension({
+						mobile: 84,
+						desktop: 144
+					}),
 					left: useResponsiveDimension({
 						mobile: -12,
 						desktop: -108
@@ -144,7 +140,10 @@ const FirstPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 			<div
 				className="absolute h-[60vw] desktop:top-[44.2px] top-[50px] rotate-[-30deg]"
 				style={{
-					width: useResponsiveDimension({ mobile: 84, desktop: 144 }),
+					width: useResponsiveDimension({
+						mobile: 84,
+						desktop: 144
+					}),
 					right: useResponsiveDimension({
 						mobile: -12,
 						desktop: -43.2
@@ -222,7 +221,7 @@ const FirstPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 					/>
 				</svg>
 			</div>
-		</div>
+		</motion.div>
 	)
 }
 

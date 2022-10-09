@@ -1,21 +1,9 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 
-import usePageStatus from "/hooks/usePageStatus"
-
-const FourthPage = ({ pageRefs, currentPage, setCurrentPage }) => {
-	const pageStatus = usePageStatus(currentPage, pageRefs.fourthPage)
-
+const FourthPage = ({ goToNextPage, transition }) => {
 	const [emailInput, setEmailInput] = useState("")
 	const emailInputEmpty = emailInput === ""
-
-	const goToNextPage = () => {
-		setCurrentPage(pageRefs.fifthPage)
-		pageRefs.thirdPageContainer.current.scrollTo({
-			left: pageRefs.fifthPage.current.offsetLeft,
-			behavior: "smooth"
-		})
-	}
 
 	const onSubmit = async (e) => {
 		e.preventDefault()
@@ -39,11 +27,11 @@ const FourthPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 		}
 	}
 
-	const textVariants = {
-		hidden: {
+	const textAnimations = {
+		initial: {
 			opacity: 0
 		},
-		visible: {
+		animate: {
 			opacity: 1,
 			transition: {
 				duration: 0.4,
@@ -51,7 +39,7 @@ const FourthPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 				ease: "easeOut"
 			}
 		},
-		exited: {
+		exit: {
 			opacity: 0,
 			transition: {
 				duration: 0.4,
@@ -60,12 +48,12 @@ const FourthPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 		}
 	}
 
-	const textboxVariants = {
-		hidden: {
+	const textboxAnimations = {
+		initial: {
 			x: -100,
 			opacity: 0
 		},
-		visible: {
+		animate: {
 			x: 0,
 			opacity: 1,
 			transition: {
@@ -74,7 +62,7 @@ const FourthPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 				ease: "easeOut"
 			}
 		},
-		exited: {
+		exit: {
 			x: 100,
 			opacity: 0,
 			transition: {
@@ -85,13 +73,24 @@ const FourthPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 	}
 
 	return (
-		<div
-			ref={pageRefs.fourthPage}
+		<motion.div
+			initial={{
+				x: 0,
+				y: "100vh"
+			}}
+			animate={{
+				x: 0,
+				y: 0
+			}}
+			exit={{
+				x: "-100vw",
+				y: 0
+			}}
+			transition={transition}
 			className="h-screen w-screen flex flex-col items-center relative"
 		>
 			<motion.div
-				animate={pageStatus}
-				variants={textVariants}
+				{...textAnimations}
 				className="mx-auto font-extralight tracking-wide
                            desktop:text-8xl lgmobile:text-5xl mdmobile:text-5xl smmobile:text-5xl tablet:text-8xl
                            desktop:mt-40 lgmobile:mt-[280px] mdmobile:mt-[225px] smmobile:mt-[200px] tablet:mt-[148px]"
@@ -101,8 +100,7 @@ const FourthPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 
 			<motion.form
 				onSubmit={onSubmit}
-				animate={pageStatus}
-				variants={textboxVariants}
+				{...textboxAnimations}
 				className="desktop:h-56 tablet:h-36 w-[71%] mt-[52px] rounded-full desktop:border-4 tablet:border-4 border-[1.5px] border-text flex"
 			>
 				<input
@@ -117,9 +115,7 @@ const FourthPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 				<button
 					type="submit"
 					className={`top-0 right-0 bg-[#171922] ${
-						!emailInputEmpty
-							? "hover:bg-[#1d1f28]"
-							: "bg-opacity-[0.45] cursor-default"
+						!emailInputEmpty ? "hover:bg-[#1d1f28]" : "bg-opacity-[0.45] cursor-default"
 					} w-[22.22%] h-full rounded-r-full desktop:border-l-4 tablet:border-l-4 border-l-[1.5px] border-text transition duration-500 flex justify-center items-center`}
 				>
 					<svg
@@ -139,7 +135,7 @@ const FourthPage = ({ pageRefs, currentPage, setCurrentPage }) => {
 					</svg>
 				</button>
 			</motion.form>
-		</div>
+		</motion.div>
 	)
 }
 

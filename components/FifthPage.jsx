@@ -1,16 +1,13 @@
 import { motion } from "framer-motion"
 
-import usePageStatus from "/hooks/usePageStatus"
 import useResponsiveDimension from "/hooks/useResponsiveDimension"
 
-const FifthPage = ({ pageRefs, currentPage }) => {
-	const pageStatus = usePageStatus(currentPage, pageRefs.fifthPage)
-
-	const textVariants = {
-		hidden: {
+const FifthPage = ({ transition }) => {
+	const textAnimations = {
+		initial: {
 			opacity: 0
 		},
-		visible: {
+		animate: {
 			opacity: 1,
 			transition: {
 				duration: 0.4,
@@ -22,12 +19,17 @@ const FifthPage = ({ pageRefs, currentPage }) => {
 
 	return (
 		<motion.div
-			ref={pageRefs.fifthPage}
-			animate={pageStatus}
+			initial={{
+				x: "100vw"
+			}}
+			animate={{
+				x: 0
+			}}
+			transition={transition}
 			className="h-screen w-screen flex flex-col justify-center items-center relative gap-[4.86vw] font-semibold pb-10 text-center"
 		>
 			<motion.div
-				variants={textVariants}
+				{...textAnimations}
 				style={{
 					fontSize: useResponsiveDimension({
 						mobile: 56,
@@ -39,7 +41,7 @@ const FifthPage = ({ pageRefs, currentPage }) => {
 			</motion.div>
 
 			<motion.div
-				variants={textVariants}
+				{...textAnimations}
 				className="font-extralight w-[70%]"
 				style={{
 					fontSize: useResponsiveDimension({

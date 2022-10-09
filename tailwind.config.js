@@ -20,7 +20,7 @@ module.exports = {
 				},
 				lgmobile: { raw: "(min-height: 771px) and (max-width: 450px)" },
 				tablet: "451px",
-				desktop: "1025px"
+				desktop: "1400px"
 			}
 		}
 	},

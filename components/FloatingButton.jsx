@@ -1,7 +1,6 @@
 import { motion } from "framer-motion"
 
 const FloatingButton = ({
-	status,
 	onClick,
 	duration = 0.5,
 	delay = 0.3,
@@ -9,12 +8,12 @@ const FloatingButton = ({
 	className,
 	style
 }) => {
-	const buttonVariants = {
-		hidden: {
+	const buttonAnimations = {
+		initial: {
 			y: 30,
 			opacity: 0
 		},
-		visible: {
+		animate: {
 			y: 0,
 			opacity: 1,
 			transition: {
@@ -23,13 +22,9 @@ const FloatingButton = ({
 				ease: "easeOut"
 			}
 		},
-		exited: {
+		exit: {
 			y: 0, // line shouldn't be necessary but for some reason prevents button from exiting diagonally when it exit right
-			[pointing === "down"
-				? "y"
-				: pointing === "right"
-				? "x"
-				: "not-yet-implemented"]: 50,
+			[pointing === "down" ? "y" : pointing === "right" ? "x" : "not-yet-implemented"]: 50,
 			opacity: 0,
 			transition: {
 				duration: 0.4,
@@ -41,14 +36,10 @@ const FloatingButton = ({
 	return (
 		<div className={className} style={style}>
 			<div className="relative">
-				<motion.div
-					initial="hidden"
-					animate={status}
-					variants={buttonVariants}
-				>
+				<motion.div {...buttonAnimations}>
 					<button
 						onClick={onClick}
-						className="h-[94px] w-[94px] rounded-full border-[4px] border-text bg-[#161922] hover:bg-[#1f232c] shadow-xl shadow-[rgba(228,230,232,0.17)] hover:shadow-[rgba(228,230,232,0.22)] transition duration-700 cursor-pointer relative z-10"
+						className="h-[94px] w-[94px] rounded-full border-[4px] border-text bg-[#1f232c] hover:bg-[#2b2e36] shadow-2xl shadow-[rgba(228,230,232,0.35)] transition duration-700 cursor-pointer relative z-10"
 					>
 						<div
 							className={`
